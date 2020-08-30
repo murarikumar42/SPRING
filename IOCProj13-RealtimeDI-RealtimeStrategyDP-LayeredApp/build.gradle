@@ -1,0 +1,27 @@
+
+plugins {
+    // Apply the java-library plugin to add support for Java Library
+    id 'application'
+}
+
+repositories {
+
+	mavenCentral()   
+}
+
+dependencies {
+	// https://mvnrepository.com/artifact/org.springframework/spring-context
+	implementation group: 'org.springframework', name: 'spring-context', version: '5.2.8.RELEASE'
+	
+	// https://mvnrepository.com/artifact/org.springframework/spring-jdbc
+	implementation group: 'org.springframework', name: 'spring-jdbc', version: '5.2.8.RELEASE'
+	
+	// https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc6
+	implementation group: 'com.oracle.database.jdbc', name: 'ojdbc6', version: '11.2.0.4'
+
+	
+	
+
+	
+ 
+}

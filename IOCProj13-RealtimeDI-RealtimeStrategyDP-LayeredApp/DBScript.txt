@@ -1,0 +1,9 @@
+create table spring_customer(
+   cno number(10,0) not null,
+    cname varchar2(20),
+    cadd varchar2(20),
+    pamt float(20),
+    interestAmt float(20));
+    
+
+create sequence "SYSTEM"."CNO_SEQ01" maxvalue 10000 increment by 1 start with 1;
