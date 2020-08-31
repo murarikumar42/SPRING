@@ -20,5 +20,10 @@
 	<bean id="custService" class="com.murari.service.CustomerMgmtServiceImpl">
 	    <constructor-arg ref="custDAO"/>
 	</bean>
+	
+	<!-- 	configure controller class -->
+	<bean id="controller" class="com.murari.controller.MainController">
+	    <constructor-arg ref="custService"/>
+	</bean>
 
 </beans>

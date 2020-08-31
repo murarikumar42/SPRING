@@ -9,6 +9,11 @@ repositories {
 	mavenCentral()   
 }
 
+mainClassName="com.murari.test.RealtimeDITest"
+run{
+	standardInput=System.in
+}
+
 dependencies {
 	// https://mvnrepository.com/artifact/org.springframework/spring-context
 	implementation group: 'org.springframework', name: 'spring-context', version: '5.2.8.RELEASE'

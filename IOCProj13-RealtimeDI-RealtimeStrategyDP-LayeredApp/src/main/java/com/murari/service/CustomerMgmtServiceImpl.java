@@ -33,8 +33,9 @@ public final class CustomerMgmtServiceImpl implements CustomerMgmtService {
 		
 		//process the result
 		if(count==0)
-			return "Registration failed: Amt:"+dto.getPamt()+"interest:"+interestAmt;
-		return "Registration succeded: Amt:"+dto.getPamt()+"interest:"+interestAmt;
+			return "Registration failed: Amt:"+dto.getPamt()+" interest:"+interestAmt;
+		else
+			return "Registration succeded: Amt:"+dto.getPamt()+"interest:"+interestAmt;
 	}
 
 }

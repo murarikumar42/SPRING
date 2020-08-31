@@ -38,7 +38,7 @@ public final class CustomerDAOImpl implements CustomerDAO {
 		ps.setFloat(4, bo.getInterestAmt());
 		
 		//execute the sql query
-		ps.executeUpdate();
+		count=ps.executeUpdate();
 		
 		//close jdbc objs
 		ps.close();
