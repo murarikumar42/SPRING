@@ -1,0 +1,8 @@
+
+SQL> create table spring_employee(eno number(10,0) not null,ename varchar2(20),edept number(5),eadd varchar2(10),basicSal float(10),netSal float(10));
+
+Table created.
+
+SQL> create sequence cno_se1 maxvalue 1000 increment by 1 start with 1;
+
+Sequence created.
