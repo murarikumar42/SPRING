@@ -3,27 +3,45 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans-4.3.xsd">
 
-<!--     Configure DataSource -->
-    <bean id="drds" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
-        <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
-        <property name="username" value="system"/>
-        <property name="password" value="98Murari"/>
-    </bean>
-    
-<!--     Configure DAO class -->
-    <bean id="EmpDAO" class="com.murari.dao.EmployeeDAOImpl">
-        <constructor-arg ref="drds"/>
-    </bean>
-    
-<!--     Configure Service class -->
-    <bean id="empService" class="com.murari.service.EmployeeMgmtServiceImpl">
-        <constructor-arg ref="EmpDAO"/>
-    </bean>
-    
-<!--     Configure controller class -->
+	<!-- Configiure DataSource -->
+	<bean id="oraDrds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url"
+			value="jdbc:oracle:thin:@localhost:1521:orcl" />
+		<property name="username" value="system" />
+		<property name="password" value="98Murari" />
+	</bean>
+
+
+
+	<bean id="mysqlDrds"
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName"
+			value="com.mysql.cj.jdbc.Driver" />
+		<property name="url" value="jdbc:mysql:///springdb" />
+		<property name="username" value="root" />
+		<property name="password" value="root" />
+	</bean>
+
+	<!-- Configure DAO class -->
+	<bean id="oraEmpDAO" class="com.murari.dao.OracleEmployeeDAOImpl">
+		<constructor-arg ref="oraDrds" />
+	</bean>
+	<bean id="mysqlEmpDAO" class="com.murari.dao.MysqlEmployeeDAOImpl">
+		<constructor-arg ref="mysqlDrds" />
+	</bean>
+
+	<!-- Configure Service class -->
+	<bean id="empService"
+		class="com.murari.service.EmployeeMgmtServiceImpl">
+		<constructor-arg ref="mysqlEmpDAO" />
+	</bean>
+
+	<!-- Configure controller class -->
 	<bean id="controller" class="com.murari.controller.MainController">
-	    <constructor-arg ref="empService"/>
+		<constructor-arg ref="empService" />
 	</bean>
 
 </beans>

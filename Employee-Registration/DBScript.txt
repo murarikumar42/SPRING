@@ -6,3 +6,19 @@ Table created.
 SQL> create sequence cno_se1 maxvalue 1000 increment by 1 start with 1;
 
 Sequence created.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE SCHEMA `springdb` ;
+
+CREATE TABLE `springdb`.`spring_employee` (
+  `eno` INT NOT NULL AUTO_INCREMENT,
+  `ename` VARCHAR(25) NULL,
+  `edept` INT NULL,
+  `eadd` VARCHAR(25) NULL,
+  `basicSal` FLOAT NULL,
+  `netSal` FLOAT NULL,
+  PRIMARY KEY (`eno`));
+
+
